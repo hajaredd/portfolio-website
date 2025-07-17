@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Freelance designer specializing in branding, web design, and illustration.">
+  <title>Portfolio</title>
+<!-- Preconnect to font origins for performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Google Fonts stylesheet -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<!-- Custom styles -->
+ <link rel="stylesheet" href="../css/style.css">
+<!-- JS files -->
+  <script defer src="../js/navbarHandlers.js"></script>
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favicon.png" type="image/png">
+</head>
+
+<body>
+ <!-- ========================== header ============================ -->
+ <header class="header">
+  <div class="header__inner">
+
+    <!-- Logo de la página -->
+    <a href="../index.html" title="logo of the website" class="header__logo">
+      <picture>
+        <source srcset="../images/webpagdesign.webp" type="image/webp">
+            <img class="header__logo-image" src="../images/webpagdesign.webp" alt="Logo" loading="lazy">
+      </picture>
+    </a>
+
+      <!-- Hamburger Button -->
+  <button class="header__toggle" aria-label="Toggle menu" title="Hamburger menu">
+    <span class="header__toggle-bar"></span>
+    <span class="header__toggle-bar"></span>
+    <span class="header__toggle-bar"></span>
+  </button>
+
+    <!-- Menú de navegación principal -->
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li class="header__nav-item">
+          <a href="about.html" title="landing page" class="header__nav-link">About</a>
+        </li>
+        <li class="header__nav-item header__nav-item--dropdown">
+          <a href="services.html" class="header__nav-link" title="services i offer">Services</a>
+          <ul class="header__dropdown-menu">
+            <li><a href="webdesign.html" title="web design service">Web design</a></li>
+            <li><a href="branding.html" title="branding service">Branding</a></li>
+            <li><a href="illustration.html" title="illustration service">Illustration</a></li>
+          </ul>
+        </li>
+        <li class="header__nav-item">
+          <a href="work.html" class="header__nav-link" title="all the work ive done">Work</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Botón de contacto-->
+    <a href="contact.html" class="header__contact-button" title="Send me a message">
+      Contact Me
+    </a>
+
+  </div>
+</header>
+
+<!-- ======================= MAIN ======================== -->
+   <!-- Estructura General: Contenido Principal -->
+<main>
+  
+  <!-- Bloque: Sección de la cuadrícula de imágenes -->
+  <div class="image-grid-section">
+    <div class="image-grid-container">
+
+      <!-- Bloque: Elemento de cuadrícula de imagen 1 -->
+      <div class="image-grid-item image-grid-item--tall">
+        <a href="project1.html" title="skillaura school project"> 
+          <picture>
+            <source srcset="../images/project1/thumb3.webp" type="image/webp">
+            <img src="../images/project1/thumb3.jpg" alt="soft skill school project" class="image-grid__image" loading="lazy">
+          </picture>
+          <div class="image-grid__overlay">
+            <span class="image-grid__text">See more</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Bloque: Elemento de cuadrícula de imagen 2 -->
+      <div class="image-grid-item">
+        <a href="project2.html" title="Museum project">  
+          <picture>
+            <source srcset="../images/project2/thumbnail-02.webp" type="image/webp">
+            <img src="../images/project2/thumbnail-02.jpg" alt="Museum project" class="image-grid__image" loading="lazy">
+          </picture>
+          <div class="image-grid__overlay">
+            <span class="image-grid__text">See more</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Bloque: Elemento de cuadrícula de imagen 3 -->
+      <div class="image-grid-item">
+        <a href="project-details-3.html" title="poster project">  
+          <picture>
+            <source srcset="../images/poster.webp" type="image/webp">
+            <img src="../images/poster.jpg" alt="rabbit illustration" class="image-grid__image" loading="lazy">
+          </picture>
+          <div class="image-grid__overlay">
+            <span class="image-grid__text">See more</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Bloque: Elemento de cuadrícula de imagen 4 -->
+      <div class="image-grid-item image-grid-item--tall">
+        <a href="project3.html" title="magazine project">  
+          <picture>
+            <source srcset="../images/project3/magazine.webp" type="image/webp">
+            <img src="../images/project3/magazine.jpg" alt="Image 4" class="image-grid__image" loading="lazy">
+          </picture>
+          <div class="image-grid__overlay">
+            <span class="image-grid__text">See more</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Bloque: Elemento de cuadrícula de imagen 5 -->
+      <div class="image-grid-item">
+        <a href="project-details-5.html" title="illustration project">  
+          <picture>
+            <source srcset="../images/illustrationrabbit.webp" type="image/webp">
+            <img src="../images/illustrationrabbit.jpg" alt="Image 5" class="image-grid__image" loading="lazy">
+          </picture>
+          <div class="image-grid__overlay">
+            <span class="image-grid__text">See more</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Bloque: Elemento de cuadrícula de imagen 6 -->
+      <div class="image-grid-item">
+        <a href="project-details-6.html" title="feral soul project">  
+          <picture>
+            <source srcset="../images/feralsoulbranding.webp" type="image/webp">
+            <img src="../images/feralsoulbranding.jpg" alt="Image 6" class="image-grid__image" loading="lazy">
+          </picture>
+          <div class="image-grid__overlay">
+            <span class="image-grid__text">See more</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Bloque: Elemento de cuadrícula de imagen 7 -->
+      <div class="image-grid-item image-grid-item--tall">
+        <a href="project-details-7.html" title="sea web page project">  
+          <picture>
+            <source srcset="../images/deepseawebsite.webp" type="image/webp">
+            <img src="../images/deepseawebsite.jpg" alt="Image 7" class="image-grid__image" loading="lazy">
+          </picture>
+          <div class="image-grid__overlay">
+            <span class="image-grid__text">See more</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Bloque: Elemento de cuadrícula de imagen 8 -->
+      <div class="image-grid-item">
+        <a href="project-details-8.html" title="wattpack project">  
+          <picture>
+            <source srcset="../images/wattpack.webp" type="image/webp">
+            <img src="../images/wattpack.jpg" alt="Image 8" class="image-grid__image" loading="lazy">
+          </picture>
+          <div class="image-grid__overlay">
+            <span class="image-grid__text">See more</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Bloque: Elemento de cuadrícula de imagen 9 -->
+      <div class="image-grid-item">
+        <a href="project-details-9.html" title="skincare web project">  
+          <picture>
+            <source srcset="../images/skincarewebsite.webp" type="image/webp">
+            <img src="../images/skincarewebsite.jpg" alt="Image 9" class="image-grid__image" loading="lazy">
+          </picture>
+          <div class="image-grid__overlay">
+            <span class="image-grid__text">See more</span>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+
+<!-- ===================== FOOTER ===================== -->
+  <!-- Bloque: Pie de página con información de contacto y redes sociales -->
+  <footer class="site-footer">
+
+    <!-- Logo del pie de página -->
+    <div class="site-footer__logo-container">
+      <picture>
+        <source srcset="../images/webpagdesign.webp" type="image/webp">
+        <img src="../images/webpagdesign.jpg" alt="Your Logo" class="site-footer__logo" loading="lazy">
+      </picture>
+    </div>
+
+    <!-- Información adicional en el footer -->
+    <div class="site-footer__info">
+
+      <!-- Información de contacto -->
+      <div class="site-footer__contact">
+        <p class="site-footer__heading">Talk to me or ask me anything.</p>
+        <ul class="site-footer__links">
+          <li><a href="contact.html" title="Get in touch with us">→ Contact Me</a></li>
+          <li><a href="/privacy-notice" title="Read our privacy notice">→ Privacy Notice</a></li>
+        </ul>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="site-footer__social">
+        <ul class="site-footer__links">
+          <li><a href="https://linkedin.com/in/profile" target="_blank" rel="noreferrer"
+              title="Visit my LinkedIn profile">→ LinkedIn</a></li>
+          <li><a href="https://twitter.com/profile" target="_blank" rel="noreferrer"
+              title="Visit my Twitter profile">→ Twitter</a></li>
+          <li><a href="https://instagram.com/profile" target="_blank" rel="noreferrer"
+              title="Visit my Instagram profile">→ Instagram</a></li>
+          <li><a href="https://youtube.com/channel" target="_blank" rel="noreferrer"
+              title="Visit my YouTube channel">→ YouTube</a></li>
+        </ul>
+      </div>
+
+      <!-- Botón para volver al inicio -->
+      <div class="site-footer__back-to-top">
+        <a href="#top" title="Scroll back to the top of the page">
+          <span aria-hidden="true">↑</span>
+          Back to top
+        </a>
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>

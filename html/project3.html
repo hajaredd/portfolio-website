@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Freelance designer specializing in branding, web design, and illustration.">
+  <title>Portfolio</title>
+<!-- Preconnect to font origins for performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Google Fonts stylesheet -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<!-- Custom styles -->
+  <link rel="stylesheet" href="../css/style.css">
+<!-- JS files -->
+  <script defer src="../js/navbarHandlers.js"></script>
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favicon.png" type="image/png">
+</head>
+
+<body>
+  <!-- ========================== header ============================ -->
+  <header class="header">
+    <div class="header__inner">
+
+      <!-- Logo de la página -->
+      <a href="../index.html" title="logo of the website" class="header__logo">
+        <picture>
+          <source srcset="../images/webpagdesign.webp" type="image/webp">
+          <img class="header__logo-image" src="../images/webpagdesign.webp" alt="Logo" loading="lazy">
+        </picture>
+      </a>
+
+        <!-- Hamburger Button -->
+    <button class="header__toggle" aria-label="Toggle menu" title="Hamburger menu">
+      <span class="header__toggle-bar"></span>
+      <span class="header__toggle-bar"></span>
+      <span class="header__toggle-bar"></span>
+    </button>
+
+      <!-- Menú de navegación principal -->
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a href="about.html" title="landing page" class="header__nav-link">About</a>
+          </li>
+          <li class="header__nav-item header__nav-item--dropdown">
+            <a href="services.html" class="header__nav-link" title="services i offer">Services</a>
+            <ul class="header__dropdown-menu">
+              <li><a href="webdesign.html" title="web design service">Web design</a></li>
+              <li><a href="branding.html" title="branding service">Branding</a></li>
+              <li><a href="illustration.html" title="illustration service">Illustration</a></li>
+            </ul>
+          </li>
+          <li class="header__nav-item">
+            <a href="work.html" class="header__nav-link" title="all the work ive done">Work</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Botón de contacto-->
+      <a href="contact.html" class="header__contact-button" title="Send me a message">
+        Contact Me
+      </a>
+
+    </div>
+  </header>
+
+  <!-- ======================= MAIN ======================== -->
+    <!-- ESTRUCTURA GENERAL DEL MAIN -->
+<main>
+    <!-- BLOQUE: Sección de proyectos (WORK) -->
+    <section class="work">
+        <div class="image-grid-container">
+
+            <!-- BLOQUE: Imagen principal 1 -->
+            <div class="image-grid-item image-grid-item--tall">
+                <picture>
+                    <source srcset="../images/project3/magazine.webp" type="image/webp">
+                    <img src="../images/project3/magazine.jpg" alt="Project image" class="image-grid__image" loading="lazy">
+                </picture>
+            </div>
+
+            <!-- BLOQUE: Descripción del proyecto -->
+            <div class="work__description">
+                <h2 class="work__title">
+                    "Un Asiento en la Mesa Marroquí" is an editorial design project
+                </h2>
+                <p class="work__text">
+                    A Seat at the Moroccan Table is an editorial design project that explores the
+                    richness of Moroccan cuisine at the intersection of gastronomy, hospitality, and culture.
+                    Conceived as a conceptual zine, it aims to transcend the familiar cookbook format, translating a
+                    rich collection of experiences—from the aromatic spice markets to shared stories and the rituals
+                    that transform meals into celebrations.
+                </p>
+            </div>
+
+            <!-- BLOQUE: Video de presentación -->
+            <div class="image-grid-item image-grid-item--tall">
+                <video controls preload="none" poster="../images/project3/magazine.webp" class="image-grid__magazine-video" autoplay loop muted>
+                    <source src="../videos/0413_1_.webm" type="video/webm">
+                    <source src="../videos/magazine.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- BLOQUE: Imagen detalle 1 -->
+            <div class="image-grid-item">
+                <picture>
+                    <source srcset="../images/project3/page2.webp" type="image/webp">
+                    <img src="../images/project3/page2.jpg" alt="Detail image 1" class="image-grid__image" loading="lazy">
+                </picture>
+            </div>
+
+            <!-- BLOQUE: Imagen detalle 2 -->
+            <div class="image-grid-item">
+                <picture>
+                    <source srcset="../images/project3/page3.webp" type="image/webp">
+                    <img src="../images/project3/page3.jpg" alt="Detail image 2" class="image-grid__image" loading="lazy">
+                </picture>
+            </div>
+
+            <!-- BLOQUE: Imagen detalle 3 -->
+            <div class="image-grid-item image-grid-item--tall">
+                <picture>
+                    <source srcset="../images/project3/page4.webp" type="image/webp">
+                    <img src="../images/project3/page4.jpg" alt="Detail image 3" class="image-grid__image" loading="lazy">
+                </picture>
+            </div>
+
+            <!-- BLOQUE: Imagen detalle 4 -->
+            <div class="image-grid-item">
+                <picture>
+                    <source srcset="../images/project3/page5.webp" type="image/webp">
+                    <img src="../images/project3/page5.jpg" alt="Detail image 4" class="image-grid__image" loading="lazy">
+                </picture>
+            </div>
+
+            <!-- BLOQUE: Imagen detalle 5 -->
+            <div class="image-grid-item">
+                <picture>
+                    <source srcset="../images/project3/page6.webp" type="image/webp">
+                    <img src="../images/project3/page6.jpg" alt="Detail image 5" class="image-grid__image" loading="lazy">
+                </picture>
+            </div>
+
+            <!-- BLOQUE: Imagen detalle 6 -->
+            <div class="image-grid-item image-grid-item--tall">
+                <picture>
+                    <source srcset="../images/project3/page7.webp" type="image/webp">
+                    <img src="../images/project3/page7.jpg" alt="Detail image 6" class="image-grid__image" loading="lazy">
+                </picture>
+            </div>
+
+        </div>
+    </section>
+</main>
+<!-- ===================== FOOTER ===================== -->
+  <!-- Bloque: Pie de página con información de contacto y redes sociales -->
+  <footer class="site-footer">
+
+    <!-- Logo del pie de página -->
+    <div class="site-footer__logo-container">
+      <picture>
+        <source srcset="../images/webpagdesign.webp" type="image/webp">
+        <img src="../images/webpagdesign.jpg" alt="Your Logo" class="site-footer__logo" loading="lazy">
+      </picture>
+    </div>
+
+    <!-- Información adicional en el footer -->
+    <div class="site-footer__info">
+
+      <!-- Información de contacto -->
+      <div class="site-footer__contact">
+        <p class="site-footer__heading">Talk to me or ask me anything.</p>
+        <ul class="site-footer__links">
+          <li><a href="contact.html" title="Get in touch with us">→ Contact Me</a></li>
+          <li><a href="/privacy-notice" title="Read our privacy notice">→ Privacy Notice</a></li>
+        </ul>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="site-footer__social">
+        <ul class="site-footer__links">
+          <li><a href="https://linkedin.com/in/profile" target="_blank" rel="noreferrer"
+              title="Visit my LinkedIn profile">→ LinkedIn</a></li>
+          <li><a href="https://twitter.com/profile" target="_blank" rel="noreferrer"
+              title="Visit my Twitter profile">→ Twitter</a></li>
+          <li><a href="https://instagram.com/profile" target="_blank" rel="noreferrer"
+              title="Visit my Instagram profile">→ Instagram</a></li>
+          <li><a href="https://youtube.com/channel" target="_blank" rel="noreferrer"
+              title="Visit my YouTube channel">→ YouTube</a></li>
+        </ul>
+      </div>
+
+      <!-- Botón para volver al inicio -->
+      <div class="site-footer__back-to-top">
+        <a href="#top" title="Scroll back to the top of the page">
+          <span aria-hidden="true">↑</span>
+          Back to top
+        </a>
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+
+</html>

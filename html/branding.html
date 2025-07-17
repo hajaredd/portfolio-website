@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Freelance designer specializing in branding, web design, and illustration.">
+  <title>Portfolio</title>
+<!-- Preconnect to font origins for performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Google Fonts stylesheet -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<!-- Custom styles -->
+  <link rel="stylesheet" href="../css/style.css">
+ <!-- JavaScript files -->
+  <script defer src="../js/navbarHandlers.js"></script>
+  <script defer src="../js/servicesAccordionHandlers.js"></script>
+  <script defer src="../js/projectsCarouselHandlers.js"></script>
+<!-- Favicon -->
+  <link rel="icon" href="../images/favicon.png" type="image/png">
+</head>
+
+
+<body>
+  <!-- ========================== header ============================ -->
+  <header class="header">
+    <div class="header__inner">
+
+      <!-- Logo de la página -->
+      <a href="../index.html" title="logo of the website" class="header__logo">
+        <picture>
+          <source srcset="../images/webpagdesign.webp" type="image/webp">
+          <img class="header__logo-image" src="../images/webpagdesign.webp" alt="Logo" loading="lazy">
+        </picture>
+      </a>
+
+        <!-- Hamburger Button -->
+    <button class="header__toggle" aria-label="Toggle menu" title="Hamburger menu">
+      <span class="header__toggle-bar"></span>
+      <span class="header__toggle-bar"></span>
+      <span class="header__toggle-bar"></span>
+    </button>
+
+      <!-- Menú de navegación principal -->
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a href="about.html" title="landing page" class="header__nav-link">About</a>
+          </li>
+          <li class="header__nav-item header__nav-item--dropdown">
+            <a href="services.html" class="header__nav-link" title="services i offer">Services</a>
+            <ul class="header__dropdown-menu">
+              <li><a href="webdesign.html" title="web design service">Web design</a></li>
+              <li><a href="branding.html" title="branding service">Branding</a></li>
+              <li><a href="illustration.html" title="illustration service">Illustration</a></li>
+            </ul>
+          </li>
+          <li class="header__nav-item">
+            <a href="work.html" class="header__nav-link" title="all the work ive done">Work</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Botón de contacto-->
+      <a href="contact.html" class="header__contact-button" title="Send me a message">
+        Contact Me
+      </a>
+
+    </div>
+  </header>
+
+
+  <!-- ======================= MAIN ======================== -->
+  <main>
+    <!-- Hero de About -->
+    <div class="about-hero">
+      <div class="about-hero__container">
+        <p class="about-hero__large-text">
+          We build strong and recognizable brands by creating impactful visual and verbal identities that tell
+          <span class="about-hero__span">your unique story</span>
+          and connect with your audience.
+        </p>
+      </div>
+    </div>
+
+    <!-- Sección de Servicios (Acordeón) -->
+    <section class="services-accordion">
+      <h2 class="services__title">The services we offer</h2>
+      <div class="services-accordion__container">
+        <!-- Item 1: Diseño de Identidad de Marca -->
+        <div class="services-accordion__item">
+          <button class="services-accordion__title" title="brand identity design services">Brand Identity Design</button>
+          <div class="services-accordion__content">
+            <p>Creation of the visual foundation of your brand. This includes the core elements that make your brand recognizable and memorable.</p>
+            <ul class="services-accordion__list">
+              <li class="services-accordion__list-item">Logo and Variations Design</li>
+              <li class="services-accordion__list-item">Color Palette Definition</li>
+              <li class="services-accordion__list-item">Typography Selection</li>
+              <li class="services-accordion__list-item">Visual Style Guides</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item 2: Estrategia y Mensajería de Marca -->
+        <div class="services-accordion__item">
+          <button class="services-accordion__title" title="Brand strategy and messaging services">Brand Strategy and Messaging</button>
+          <div class="services-accordion__content">
+            <p>Definition of the purpose, values, and how your brand communicates with its audience.</p>
+            <ul class="services-accordion__list">
+              <li class="services-accordion__list-item">Brand Voice Development</li>
+              <li class="services-accordion__list-item">Messaging Framework</li>
+              <li class="services-accordion__list-item">Value Proposition Definition</li>
+              <li class="services-accordion__list-item">Target Audience Analysis</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item 3: Desarrollo de Guías de Marca -->
+        <div class="services-accordion__item">
+          <button class="services-accordion__title" title="brand guidlines development services">Brand Guidelines Development</button>
+          <div class="services-accordion__content">
+            <p>Creation of a comprehensive document describing how your brand should be represented visually and verbally across all platforms.</p>
+            <ul class="services-accordion__list">
+              <li class="services-accordion__list-item">Logo Usage Guidelines</li>
+              <li class="services-accordion__list-item">Color System Specifications</li>
+              <li class="services-accordion__list-item">Typography Hierarchy and Usage</li>
+              <li class="services-accordion__list-item">Image Style and Iconography</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item 4: Diseño de Materiales de Marca -->
+        <div class="services-accordion__item">
+          <button class="services-accordion__title" title="brand collateral design">Brand Collateral Design</button>
+          <div class="services-accordion__content">
+            <p>Extension of your brand’s identity to various marketing and communication materials.</p>
+            <ul class="services-accordion__list">
+              <li class="services-accordion__list-item">Business Card Design</li>
+              <li class="services-accordion__list-item">Stationery Design (Letterhead, Envelopes)</li>
+              <li class="services-accordion__list-item">Marketing Materials Design (Brochures, Flyers)</li>
+              <li class="services-accordion__list-item">Social Media Templates</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item 5: Refrescamiento y Evolución de Marca -->
+        <div class="services-accordion__item">
+          <button class="services-accordion__title" title="brand refresh and evolution">Brand Refresh and Evolution</button>
+          <div class="services-accordion__content">
+            <p>Updating and revitalizing an existing brand to remain relevant and attract a changing market.</p>
+            <ul class="services-accordion__list">
+              <li class="services-accordion__list-item">Brand Audit and Analysis</li>
+              <li class="services-accordion__list-item">Logo Redesign and Updates</li>
+              <li class="services-accordion__list-item">Visual Identity Adjustments</li>
+              <li class="services-accordion__list-item">Messaging Refinement</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item 6: Desarrollo de Nombres y Eslogans -->
+        <div class="services-accordion__item">
+          <button class="services-accordion__title" title="Naming and Slogan Development services ">Naming and Slogan Development</button>
+          <div class="services-accordion__content">
+            <p>Creation of memorable and impactful names and slogans that capture the essence of your brand.</p>
+            <ul class="services-accordion__list">
+              <li class="services-accordion__list-item">Brand Name Exploration</li>
+              <li class="services-accordion__list-item">Slogan Creation and Testing</li>
+              <li class="services-accordion__list-item">Brand Name Evaluation</li>
+              <li class="services-accordion__list-item">Linguistic Considerations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Proyectos -->
+    <section class="projects">
+      <!-- Título y descripción de proyectos -->
+      <h2 class="projects__title">Projects</h2>
+      <p class="projects__description">These are some of the projects I’ve had the pleasure to work on.
+      </p>
+      <!-- Carrusel de Proyectos -->
+      <div class="projects__carousel">
+        <!-- Proyecto 1 -->
+        <div class="projects__item">
+          <picture>
+            <source srcset="../images/project1/thumb3.webp" type="image/webp">
+            <img class="projects__image" src="../images/project1/thumb3.jpg" alt="Descripción del Proyecto 1"
+              loading="lazy">
+          </picture>
+        </div>
+        <!-- Proyecto 2 -->
+        <div class="projects__item">
+          <picture>
+            <source srcset="../images/project2/thumbnail-02.webp" type="image/webp">
+            <img class="projects__image" src="../images/project2/thumbnail-02.jpg" alt="Descripción del Proyecto 2"
+              loading="lazy">
+          </picture>
+        </div>
+        <!-- Proyecto 3 -->
+        <div class="projects__item">
+          <picture>
+            <source srcset="../images/project3/magazine.webp" type="image/webp">
+            <img class="projects__image" src="../images/project3/magazine.jpg" alt="Descripción del Proyecto 3"
+              loading="lazy">
+          </picture>
+        </div>
+        <!-- Proyecto 4 -->
+        <div class="projects__item">
+          <picture>
+            <source srcset="../images/feralsoulbranding.webp" type="image/webp">
+            <img class="projects__image" src="../images/feralsoulbranding.jpg" alt="Descripción del Proyecto 4"
+              loading="lazy">
+          </picture>
+        </div>
+        <!-- Proyecto 5 -->
+        <div class="projects__item">
+          <picture>
+            <source srcset="../images/wattpack.webp" type="image/webp">
+            <img class="projects__image" src="../images/wattpack.jpg" alt="Descripción del Proyecto 5" loading="lazy">
+          </picture>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+
+  <!-- ===================== FOOTER ===================== -->
+  <!-- Bloque: Pie de página con información de contacto y redes sociales -->
+  <footer class="site-footer">
+
+    <!-- Logo del pie de página -->
+    <div class="site-footer__logo-container">
+      <picture>
+        <source srcset="../images/webpagdesign.webp" type="image/webp">
+        <img src="../images/webpagdesign.jpg" alt="Your Logo" class="site-footer__logo" loading="lazy">
+      </picture>
+    </div>
+
+    <!-- Información adicional en el footer -->
+    <div class="site-footer__info">
+
+      <!-- Información de contacto -->
+      <div class="site-footer__contact">
+        <p class="site-footer__heading">Talk to me or ask me anything.</p>
+        <ul class="site-footer__links">
+          <li><a href="contact.html" title="Get in touch with us">→ Contact Me</a></li>
+          <li><a href="/privacy-notice" title="Read our privacy notice">→ Privacy Notice</a></li>
+        </ul>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="site-footer__social">
+        <ul class="site-footer__links">
+          <li><a href="https://linkedin.com/in/profile" target="_blank" rel="noreferrer"
+              title="Visit my LinkedIn profile">→ LinkedIn</a></li>
+          <li><a href="https://twitter.com/profile" target="_blank" rel="noreferrer"
+              title="Visit my Twitter profile">→ Twitter</a></li>
+          <li><a href="https://instagram.com/profile" target="_blank" rel="noreferrer"
+              title="Visit my Instagram profile">→ Instagram</a></li>
+          <li><a href="https://youtube.com/channel" target="_blank" rel="noreferrer"
+              title="Visit my YouTube channel">→ YouTube</a></li>
+        </ul>
+      </div>
+
+      <!-- Botón para volver al inicio -->
+      <div class="site-footer__back-to-top">
+        <a href="#top" title="Scroll back to the top of the page">
+          <span aria-hidden="true">↑</span>
+          Back to top
+        </a>
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+
+</html>

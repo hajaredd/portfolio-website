@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Freelance designer specializing in branding, web design, and illustration.">
+  <title>Portfolio</title>
+<!-- Preconnect to font origins for performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Google Fonts stylesheet -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<!-- Custom styles -->
+  <link rel="stylesheet" href="../css/style.css">
+<!-- JavaScript files -->
+  <script defer src="../js/navbarHandlers.js"></script>
+  <script defer src="../js/aboutHandlers.js"></script>
+<!-- Favicon -->
+  <link rel="icon" href="../images/favicon.png" type="image/png">
+</head>
+
+
+<body>
+     <!-- ========================== header ============================ -->
+     <header class="header">
+      <div class="header__inner">
+  
+        <!-- Logo de la página -->
+        <a href="../index.html" title="logo of the website" class="header__logo">
+          <picture>
+            <source srcset="../images/webpagdesign.webp" type="image/webp">
+            <img class="header__logo-image" src="../images/webpagdesign.webp" alt="Logo" loading="lazy">
+          </picture>
+        </a>
+  
+          <!-- Hamburger Button -->
+      <button class="header__toggle" aria-label="Toggle menu" title="Hamburger menu">
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+      </button>
+  
+        <!-- Menú de navegación principal -->
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a href="about.html" title="landing page" class="header__nav-link">About</a>
+            </li>
+            <li class="header__nav-item header__nav-item--dropdown">
+              <a href="services.html" class="header__nav-link" title="services i offer">Services</a>
+              <ul class="header__dropdown-menu">
+                <li><a href="webdesign.html" title="web design service">Web design</a></li>
+                <li><a href="branding.html" title="branding service">Branding</a></li>
+                <li><a href="illustration.html" title="illustration service">Illustration</a></li>
+              </ul>
+            </li>
+            <li class="header__nav-item">
+              <a href="work.html" class="header__nav-link" title="all the work ive done">Work</a>
+            </li>
+          </ul>
+        </nav>
+  
+        <!-- Botón de contacto-->
+        <a href="contact.html" class="header__contact-button" title="Send me a message">
+          Contact Me
+        </a>
+  
+      </div>
+    </header>
+  
+   <!-- ========================== MAIN ============================ -->
+  <main>
+
+    <!-- Sección de héroe de "Sobre ME" -->
+    <div class="about-hero">
+        <div class="about-hero__container">
+            <p class="about-hero__large-text">
+                From crafting digital experiences to building impactful brands, we partner with ambitious individuals and businesses at pivotal inflection points.
+            </p>
+        </div>
+    </div>
+
+    <!-- Sección del proceso de diseño -->
+    <section class="design-section">
+        <h2 class="process__title">Design process</h2>
+        <div class="design-process">
+            <div class="design-process__container">
+              <!-- Pestañas del proceso de diseño -->
+                <div class="design-process__tabs">
+                    <div class="design-process__tab design-process__tab--active" data-target="step-0">Discovery</div>
+                    <div class="design-process__tab" data-target="step-1">Onboarding</div>
+                    <div class="design-process__tab" data-target="step-2">Creation</div>
+                    <div class="design-process__tab" data-target="step-3">Presentation</div>
+                </div>
+                <div class="design-process__content">
+
+                    <!-- Paso 1: Discovery -->
+                    <div class="design-process__step" id="step-0">
+                        <h2 class="design-process__title">Discovery</h2>
+                        <p>
+                            This is the foundation phase of the project. In this step, I aim to deeply understand you, your brand, your audience, and your goals. We'll collaborate through:
+                        </p>
+                        <ul>
+                            <li>Conversations and interviews</li>
+                            <li>Brand questionnaires</li>
+                            <li>Market and competitor research</li>
+                            <li>Style and mood exploration (moodboards, references)</li>
+                        </ul>
+                        <p>🎯 The goal is to align on a clear creative direction before any design work begins.</p>
+                    </div>
+
+                    <!-- Paso 2: Onboarding & Contract -->
+                    <div class="design-process__step" id="step-1" hidden>
+                        <h2 class="design-process__title">Onboarding & Contract</h2>
+                        <p>
+                            Once the vision is clear, it's time to get organized and aligned. In this step:
+                        </p>
+                        <ul>
+                            <li>We'll go through and sign a contract to ensure we're on the same page legally and professionally.</li>
+                            <li>I’ll provide a timeline and a project checklist.</li>
+                            <li>You’ll receive an onboarding packet detailing project phases, expectations, and communication structure.</li>
+                        </ul>
+                        <p>📋 This creates structure and trust, giving both of us clarity and peace of mind moving forward.</p>
+                    </div>
+
+                    <!-- Paso 3: Creation / Design -->
+                    <div class="design-process__step" id="step-2" hidden>
+                        <h2 class="design-process__title">Creation / Design</h2>
+                        <p>
+                            This is the most exciting part! With clear direction and structure in place, I’ll start designing:
+                        </p>
+                        <ul>
+                            <li>Initial concept(s) will be presented for feedback</li>
+                            <li>Iterative design rounds based on your input</li>
+                            <li>Visual elements like typography, colors, and layout are refined</li>
+                            <li>Prototypes/mockups (if needed) will be shared for realistic previews</li>
+                        </ul>
+                        <p>🛠️ You’ll be involved with feedback loops, so your vision is reflected throughout the design evolution.</p>
+                    </div>
+
+                    <!-- Paso 4: Presentation & Offboarding -->
+                    <div class="design-process__step" id="step-3" hidden>
+                        <h2 class="design-process__title">Presentation & Offboarding</h2>
+                        <p>
+                            At this final step, everything comes together. We:
+                        </p>
+                        <ul>
+                            <li>Present the final designs and walk through every element</li>
+                            <li>Make final minor revisions if needed</li>
+                            <li>Deliver all agreed-upon assets (design files, brand guides, etc.)</li>
+                            <li>Provide instructions or support to help you implement and maintain the work</li>
+                        </ul>
+                        <p>🚀 We part ways with a finished project that you feel confident using — and ideally, inspired by.</p>
+                    </div>
+
+                  </div>
+            </div>
+        </div>
+
+    </section>
+
+
+</main>
+
+ <!-- ===================== FOOTER ===================== -->
+  <!-- Bloque: Pie de página con información de contacto y redes sociales -->
+  <footer class="site-footer">
+
+    <!-- Logo del pie de página -->
+    <div class="site-footer__logo-container">
+      <picture>
+        <source srcset="../images/webpagdesign.webp" type="image/webp">
+        <img src="../images/webpagdesign.jpg" alt="Your Logo" class="site-footer__logo" loading="lazy">
+      </picture>
+    </div>
+
+    <!-- Información adicional en el footer -->
+    <div class="site-footer__info">
+
+      <!-- Información de contacto -->
+      <div class="site-footer__contact">
+        <p class="site-footer__heading">Talk to me or ask me anything.</p>
+        <ul class="site-footer__links">
+          <li><a href="contact.html" title="Get in touch with us">→ Contact Me</a></li>
+          <li><a href="/privacy-notice" title="Read our privacy notice">→ Privacy Notice</a></li>
+        </ul>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="site-footer__social">
+        <ul class="site-footer__links">
+          <li><a href="https://linkedin.com/in/profile" target="_blank" rel="noreferrer"
+              title="Visit my LinkedIn profile">→ LinkedIn</a></li>
+          <li><a href="https://twitter.com/profile" target="_blank" rel="noreferrer"
+              title="Visit my Twitter profile">→ Twitter</a></li>
+          <li><a href="https://instagram.com/profile" target="_blank" rel="noreferrer"
+              title="Visit my Instagram profile">→ Instagram</a></li>
+          <li><a href="https://youtube.com/channel" target="_blank" rel="noreferrer"
+              title="Visit my YouTube channel">→ YouTube</a></li>
+        </ul>
+      </div>
+
+      <!-- Botón para volver al inicio -->
+      <div class="site-footer__back-to-top">
+        <a href="#top" title="Scroll back to the top of the page">
+          <span aria-hidden="true">↑</span>
+          Back to top
+        </a>
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>

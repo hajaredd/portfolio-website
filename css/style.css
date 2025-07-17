@@ -1,0 +1,1449 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    }
+
+    :root {
+      /* Color de fondo principal */
+      --background-color: #021929;
+      /* Color de texto principal */
+      --text-color: #F0EFE6;
+      /* Color del texto no seleccionado */
+      --inselected-text:#a9a9a9;
+      /* Color de resaltado */
+      --highlight-color:  #ffff00 ;
+      /* Fuente principal para el texto */
+      --main-font-family: "Roboto", sans-serif;
+      /* Fuente secundaria para el texto */
+      --secondary-font-family: "IBM Plex Serif", serif;
+      /* Tamaño de fuente para los encabezados */
+      --header-font-size: 5em;
+      /* Tamaño de fuente responsivo para los encabezados */
+      --responsive-header-font-size:3em;
+         /* Tamaño de fuente para texto */
+      --text-font-size:1em;
+      --description-text-font-size:1.5rem;
+  }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+/* -------------------- HEADER -------------------- */
+
+/* Estilos generales del header */
+.header {
+  padding: .625rem 6.25rem;
+  position: fixed; /* Se fija en la parte superior de la pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; /* Se asegura que esté encima de otros elementos */
+}
+
+/* Estilos del header cuando se ha hecho scroll */
+.header .scrolled {
+  margin: .3125rem 1.25rem;
+  transition: margin 0.3s ease-in-out; /* Animación suave en cambio de margen */
+}
+
+/* Estilos adicionales del header cuando se ha hecho scroll */
+.header__inner.scrolled {
+  background-color: rgba(210, 212, 214, 0.7); /* Fondo semitransparente */
+  backdrop-filter: blur(.625rem); /* Aplica efecto de desenfoque */
+  padding: .0187rem 15%;
+}
+
+/* Contenedor interno del header */
+.header__inner {
+  display: flex;
+  align-items: center;   /* Centra verticalmente los elementos dentro del header */
+  justify-content: space-between;
+  background-color: var(--background-color);
+  max-height: 5.625rem;   /* Limita la altura máxima */
+  padding: .0187rem 5%;
+  border-radius: 6.25rem;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, padding 0.3s ease; /* Transiciones suaves */
+}
+
+/* Logo del header */
+.header__logo {
+  text-decoration: none; /* Elimina subrayado de enlaces */
+}
+
+/* Imagen del logo */
+.header__logo-image {
+  width: 9.375rem;
+  height: 6.875rem;
+}
+
+/* Lista de navegación */
+.header__nav-list {
+  list-style: none;
+  display: flex; /* Elementos de navegación en fila */
+}
+
+/* Ítems de navegación */
+.header__nav-item {
+  padding: 0rem 1.875rem;
+}
+
+/* Enlaces de navegación */
+.header__nav-link {
+  text-decoration: none;
+  color: var(--inselected-text);
+  font-size: 1.2em;
+  font-family: var(--main-font-family);
+  transition: color 0.3s ease-in-out; /* Cambio de color suave al pasar el mouse */
+}
+/* Hover de Enlaces de navegación */
+.header__nav-link:hover{
+ color: var(--highlight-color);
+}
+
+
+/* Color de enlaces cuando el header está scrolleado */
+.header__inner.scrolled .header__nav-link {
+  color: var(--background-color);
+}
+
+/* Hover de enlaces de navegación cuando el header está scrolleado  */
+.header__inner.scrolled .header__nav-link:hover {
+  color: var(--highlight-color);
+}
+/* --------- MENÚ DESPLEGABLE (Dropdown) --------- */
+
+/* Ítem que contiene el dropdown */
+.header__nav-item--dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Menú desplegable oculto inicialmente */
+.header__dropdown-menu {
+  position: absolute;   /* Posiciona el menú absolutamente respecto a su contenedor padre 
+  para que se ubique debajo del elemento principal */
+  font-family: var(--main-font-family);
+  top: 100%;
+  left: 0;
+  background: var(--text-color);
+  min-width: 12.5rem;
+  box-shadow: 0 .125rem .3125rem rgba(0, 0, 0, 0.1); /* sombra de menu desplegable */
+  opacity: 0; /*ocultar menu*/
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* Desactiva clics mientras está oculto */
+  border-radius: 0.7rem;
+  list-style: none;
+}
+
+/* Mostrar menú al pasar el mouse */
+.header__nav-item--dropdown:hover .header__dropdown-menu {
+  opacity: 1; /*mostrat menu*/
+  pointer-events: auto;
+}
+
+/* Enlaces dentro del dropdown */
+.header__dropdown-menu a {
+  color: var(--inselected-text);
+  padding: 1rem 1rem;
+  text-decoration: none;
+  display: block;
+}
+
+/* Hover en los enlaces del dropdown */
+.header__dropdown-menu a:hover {
+  background: var(--background-color);
+  color: var(--highlight-color);
+}
+
+/* --------- BOTÓN DE CONTACTO --------- */
+
+.header__contact-button {
+  color: var(--background-color);
+  background-color: var(--text-color);
+  border: solid .125rem var(--background-color);
+  box-shadow: .1875rem .1875rem 0rem 0rem rgba(240,239,230,1);
+  font-family: var(--main-font-family);
+  border-radius: 1.5625rem;
+  padding: .625rem 1.25rem;
+  cursor: pointer;
+  font-size: var(--text-font-size);
+  transition: background-color 0.5s ease-in-out; /* transition de color de fondo fluida" */
+  text-decoration: none;
+}
+
+/* Animación del botón de contacto al hacer hover */
+.header__contact-button:hover {
+  animation: wobble 1s; /* Animación personalizada de "tambaleo" */
+  background-color: var(--highlight-color);
+}
+
+/* Definición de la animación "wobble" 
+   Esta animación crea un efecto de sacudida horizontal con ligeras rotaciones */
+@keyframes wobble {
+0%, 100% { transform: translateX(0%); }     /* Punto de inicio y final: posición original, sin desplazamiento */
+15% { transform: translateX(-25%) rotate(-5deg); }
+30% { transform: translateX(20%) rotate(3deg); }
+45% { transform: translateX(-15%) rotate(-3deg); }
+60% { transform: translateX(10%) rotate(2deg); }
+75% { transform: translateX(-5%) rotate(-1deg); }
+}
+
+/* --------- BOTÓN HAMBURGUESA --------- */
+
+.header__toggle {
+  display: none; /* Oculto en pantallas grandes */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1.5625rem;
+  height: 1.125rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 11; /* Más arriba que el header */
+}
+
+/* Barras del botón hamburguesa */
+.header__toggle-bar {
+  width: 100%;
+  height: .1875rem;
+  background-color: var(--text-color);
+  border-radius: .125rem;
+}
+
+/* -------------------- HERO SECTION -------------------- */
+
+/* Ajuste mínimo para que el main cubra toda la pantalla menos el header y footer */
+body {
+  min-height: calc(100vh - 27.5rem);
+}
+
+/* Hero general */
+.hero {
+  width: 100%;
+  height: 100vh; /* Ocupa toda la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--text-color);
+}
+
+/* Contenedor principal dentro del hero */
+.hero__container {
+  display: flex;
+}
+
+/* Círculo llamativo en el centro del hero */
+.hero__circle {
+  width: 25rem;
+  height: 25rem;
+  background-color: var(--highlight-color);
+  border-radius: 50%; /* Forma circular */
+  cursor: pointer;
+  transition: filter 0.1s ease-out; /*suavisar la trasicion*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centrado absoluto */
+}
+
+/* Contenido textual del hero */
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 3;  /* arriba del circulo */
+  color: var(--background-color);
+  font-family: var(--main-font-family);
+}
+
+/* Título principal */
+.hero__title {
+  font-size: 6em;
+  font-weight: bold;
+  margin: .625rem;
+}
+
+/* Descripción del hero */
+.hero__description {
+  font-size: 1.5em;
+  font-weight: 500;
+  padding: .625rem 1.875rem;
+}
+
+/* -------------------- CURSOR EFECTO MÁQUINA DE ESCRIBIR -------------------- */
+
+/* Contenedor del cursor */
+.cursor {
+  position: relative;
+  width: 24em;
+  margin: 0 auto;
+  border-right: .125rem solid rgba(255,255,255,.75);
+  font-size: 1.5em;
+  font-weight: 100;
+  padding: .625rem 1.875rem;
+  white-space: nowrap; /* No saltar línea */
+  overflow: hidden; /* Esconde el texto fuera del contenedor */
+  transform: translateY(-50%);
+}
+
+/* Animaciones del texto */
+.hero__description {
+  animation: 
+      typewriter 5s steps(50) 1s 1 normal both,  /* nombre de la animación que crea el efecto "máquina de escribir" */
+      blinkingCursor 500ms steps(50) infinite normal;     /* nombre de la animación que crea el efecto de un cursor parpadeante*/
+}
+
+/* Animación de máquina de escribir */
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Animación de parpadeo del cursor */
+@keyframes blinkingCursor {
+  from { border-right-color: rgba(255,255,255,.75); }
+  to { border-right-color: transparent; }
+}
+
+/* -------------------- SECCIÓN DE SERVICIOS -------------------- */
+
+/* Texto animado de scrolling */
+.scrolling-text-container {
+  width: 100%;
+  overflow: hidden; /* Esconde el exceso de texto */
+  white-space: nowrap; /* No hacer saltos de línea */
+}
+
+.scrolling-text {
+  display: flex;               /* Flex for inline elements */
+  gap: 3rem;
+  animation: scrollText 10s linear infinite; /* Texto que se mueve de derecha a izquierda */
+  font-size: 4em;
+  font-family: var(--main-font-family);
+  color: var(--background-color);
+  transition: animation 3s ease-in-out;
+}
+
+/* Animación de desplazamiento del texto */
+@keyframes scrollText {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Servicios generales */
+.services {
+  padding: 1.25rem;
+  background-color: var(--text-color);
+}
+
+.services__container {
+  max-width: 75rem; /* Contenedor centrado y ancho limitado */
+  margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.services__title {
+  font-size: var(--header-font-size);
+  margin: 12.5rem 0rem 6.25rem 0rem;
+  text-align: center;
+  font-family: var(--secondary-font-family);
+  color: var(--background-color);
+}
+
+/* Grilla de servicios */
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr)); /* Grilla adaptable */
+  gap: 1.25rem; /* Espacio entre columnas */
+  margin: 0 0 5rem 0;
+}
+
+/* Enlace que rodea cada servicio */
+.services__link {
+  text-decoration: none;
+  color: var(--background-color);
+  font-family: var(--main-font-family);
+  display: block; /* Hace que el enlace ocupe todo el bloque */
+  transition: transform 0.3s ease-in-out;  /* Animación suave al hacer hover */
+}
+
+/* Animación al pasar sobre los servicios */
+.services__link:hover {
+  transform: scale(1.03); /* Aumenta ligeramente el tamaño */
+}
+
+/* Tarjeta de servicio */
+.services__item {
+  text-align: center;
+  padding: .9375rem;
+  border-radius: .5rem;  /* Bordes redondeados */
+  box-shadow: 0 .125rem .3125rem rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Imagen dentro del servicio */
+.services__image {
+  width: 18.75rem;
+  height: auto;
+  border-radius: .5rem; 
+  transition: transform 0.3s ease-in-out; /* Transición para efecto de rotación */
+}
+
+/* Efecto de rotación sobre la imagen */
+.services__link:hover .services__image {
+  transform: rotate(5deg); /* Gira la imagen al pasar el cursor */
+}
+
+.services__item-title {
+  font-size: 1.5em;
+  margin: .625rem 0 1.25rem 0;
+}
+
+.services__description {
+  font-size: var(--text-font-size);
+  color: #555;
+}
+/* -------------------- SECCIÓN DE EJEMPLOS (TRABAJOS) -------------------- */
+.work-examples {
+  padding: 2.5rem 1.25rem;
+  background-color: var(--background-color);
+  display: flex;  /* flex para distribuir contenido */
+  flex-direction: column;
+}
+
+/* Título de la sección */
+.work-examples__heading {
+  font-size: var(--header-font-size);
+  text-align: center;
+  margin: 5rem auto;
+  color: var(--text-color);
+  font-family: var(--secondary-font-family);
+}
+
+/* Contenedor de los ejemplos */
+.work-examples__container {
+  max-width: 87.5rem;
+  margin: 0 auto; /* Centrar contenedor */
+  display: flex;
+  justify-content: space-around; /* Distribuir espacio alrededor */
+  align-items: stretch;
+  flex-wrap: wrap; /* Permite que los ítems se ajusten en varias filas */
+}
+
+/* Ítem de ejemplo */
+.work-examples__item {
+  text-align: center;
+ /* Tamaño flexible con base mínima */
+  border-radius: .9375rem;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Fondos diferenciados */
+.work-examples__item--museum {
+  background-color: var(--highlight-color);
+}
+
+.work-examples__item--school {
+  background-color: var(--text-color);
+}
+
+/* Imagen de cada ejemplo */
+.work-examples__image {
+  width: 31.25rem;
+  height: auto;
+  border-radius: .625rem;
+  transition: transform 0.3s ease-in-out; /* Animación para rotación */
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto de rotación en hover */
+.work-examples__image:hover {
+  transform: rotate(4deg);
+}
+
+/* Botón de "ver más" */
+.work-examples__button {
+  display: inline-block;
+  padding: 1.25rem 2.5rem;
+  background-color: var(--text-color);
+  color: var(--background-color);
+  font-family: var(--main-font-family);
+  border-radius: 3.125rem;
+  margin: 1.875rem auto 0;
+  font-size: 1.2em;
+  text-align: center;
+  text-decoration: none;
+  width: 100%; /* Ocupar todo el ancho disponible */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Cambios suaves al hacer hover */
+  line-height: 1.4;
+}
+
+/* Botón de Ejemplos de Trabajo */
+.work-examples__button span {
+  display: block;  /* Asegura que el texto ocupe bloque completo */
+}
+
+.work-examples__button:hover {
+  background-color: var(--background-color); /* Color de fondo al hacer hover */
+  color: var(--text-color); /* Color del texto al hacer hover */
+}
+
+/* ------------------- Sección About ------------------- */
+.about {
+  padding: 5rem 0rem 12.5rem 0rem;
+  background-color: var(--text-color); /* Color de fondo de la sección About */
+}
+
+.about__container {
+  max-width: 100vh; /* Ancho máximo del contenedor */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinear los elementos al inicio */
+}
+
+.about__title {
+  font-size: var(--header-font-size); 
+  font-family: var(--secondary-font-family);
+  margin: 1.875rem 3.125rem;
+  color: var(--background-color); /* Color del título */
+}
+
+.about__description {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: var(--background-color); /* Color más claro para el texto */
+  margin: 1.25rem -3.125rem;  /* Ajuste negativo para extender el bloque */
+  font-family: var(--main-font-family);
+}
+
+.about__call-to-action {
+  display: inline-block;
+  padding: .9375rem 1.875rem;
+  text-decoration: none;
+  border: .125rem solid var(--text-color);
+  background-color: var(--background-color);
+  box-shadow: .375rem .375rem 0rem 0rem rgba(2,25,41,1); /* Sombra para dar efecto de botón levantado */
+  font-family: var(--main-font-family);
+  color: var(--text-color);
+  border-radius: 1.875rem;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+}
+
+.about__call-to-action:hover {
+  background-color: var(--highlight-color); /* Cambia el fondo al hacer hover */
+  transform: translateY(-0.3125rem); /* Efecto de elevación */
+  color: var(--background-color); /* Invertir color del texto */
+}
+
+.about__call-to-action:active {
+  transform: translateY(.125rem); /* Efecto de presionado */
+}
+
+/* ------------------- Footer ------------------- */
+.site-footer {
+  background-color: var(--highlight-color); /* Color de fondo del pie de página */
+  color: var(--background-color);
+  font-family: var(--main-font-family);
+  padding: 2.5rem;
+  display: flex;
+  align-items: flex-start; /* Alinear arriba */
+  justify-content: space-evenly; /* Espaciado equitativo entre columnas */
+  position: relative;
+  height: 21.875rem;
+}
+
+.site-footer__logo {
+  width: 25rem; /* Tamaño del logo */
+  height: 18.75rem;
+}
+
+.site-footer__info {
+  display: flex;
+  gap: 5rem; /* Espacio entre secciones del footer */
+}
+
+.site-footer__heading {
+  font-size: 1.2em;
+  margin: 0 0 .625rem 0;
+}
+
+.site-footer__links {
+  list-style: none; /* Quitar viñetas */
+}
+
+.site-footer__links li {
+  margin: 0 0 .5rem 0;
+}
+
+.site-footer__links a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-footer__links a:hover {
+  text-decoration: underline; /* Subrayar links al pasar el mouse */
+}
+
+.site-footer__back-to-top a {
+  display: flex; /* Alinear icono y texto */
+  flex-direction: column;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-footer__back-to-top span {
+  font-size: 2em;
+  line-height: 1;
+}
+
+/* ------------------- Estilos Responsivos ------------------- */
+@media (max-width: 48rem) {
+  /* Ajustes para la sección Hero */
+    /* Reducir margen para títulos grandes en pantallas pequeñas */
+  .hero__title {
+    margin: 1.25rem;
+  }
+
+  /* Ajuste del tamaño del título en ejemplos de trabajo */
+  /* Reducir márgenes en About para mejor legibilidad en móvil */
+  .work-examples__heading {
+    font-size: var(--responsive-header-font-size);
+  }
+  .work-examples__container {
+    max-width: 40rem;
+  }
+  .work-examples {
+    padding: 1rem 0;
+  }
+  .work-examples__item {
+    padding: .8rem;
+  }
+
+  /* Ajustes para la descripción en About */
+  .about__description {
+    font-size: var(--text-font-size);
+    margin: 0 1.875rem 1.875rem; /* Reducir márgin*/
+  }
+
+/* Ajuste del botón en About para evitar que ocupe todo el ancho */
+  .about__call-to-action {
+    margin: 0 1.5625rem;
+  }
+
+/* Footer pasa de horizontal a vertical para mejorar disposición en pantallas estrechas */
+  .site-footer {
+    flex-direction: column;  /* Cambia a columna */
+    align-items: center;  /* Centra contenido */
+    text-align: center;
+    height: 50rem;  /* Aumenta altura para acomodar disposición vertical */
+  }
+
+  .site-footer__info {
+    flex-direction: column; /* Apila bloques de info */
+    align-items: center; /* Centra cada bloque */
+  }
+
+  .site-footer__social {
+    margin: .3125rem; /* Separación mínima */
+  }
+
+  /* Navegación móvil */
+  .header__toggle {
+    display: flex; /* Mostrar botón hamburguesa */
+  }
+  .header__inner.scrolled .header__nav-link {
+    color: var(--text-color);
+  }
+/* Menú móvil se muestra como columna desplegable */
+  .header__nav {
+    opacity: 0;   /* Oculto por defecto */
+    pointer-events: none; /* Sin interacción por defecto */
+    
+    display: flex;  /* Usa flex para apilar enlaces verticalmente */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 5%;
+    background-color: var(--background-color);
+    width: 15.625rem;
+    box-shadow: 0rem .5rem 1rem rgba(0, 0, 0, 0.2);
+    border-radius: .9375rem;
+    padding: 1rem; /* Padding interno para separar enlaces */
+    z-index: 13;
+    transition: opacity 0.3s ease-in-out; /* Animación suave al mostrar */
+  }
+
+  .header__nav.active {
+
+    opacity: 1; /* Mostrar menú cuando esté activo */
+  pointer-events: auto; /* Clickable */
+  }
+
+  .header__nav-list {
+    flex-direction: column;  /* Lista vertical */
+    gap: 1rem;  /* Espacio entre enlaces */
+  }
+
+  .header__nav-item--dropdown:hover .header__dropdown-menu {
+    position: static;  /* Posiciona dropdown estático en móvil */
+    transform: none;  /* Sin transformaciones extra *
+    opacity: 1; /* Visible */
+    pointer-events: auto;  
+    background-color: transparent; /* Sin fondo extra */
+    box-shadow: none; /* Sin sombra */
+    padding: 0.5rem 0 0.5rem 1rem; /* Ajuste de padding para alineación */
+  }
+
+  .header__dropdown-menu a {
+    padding: 0.5rem 0 0.5rem 1.5rem;
+  }
+
+  .header__contact-button {
+    display: none; /* Ocultar botón de contacto */
+  }
+
+  .header__logo-image {
+    width: 7.5rem; /* Logo más pequeño */
+  }
+}
+
+
+/* Ajustes para pantallas medianas para ajustar botones y barra de navegación */
+@media (max-width: 61.25rem) {
+  .header__contact-button {
+    font-size: 0.8em; /* Botón más pequeño */
+    padding: .625rem .9375rem; /* Padding reducido */
+  }
+  .header__inner.scrolled {
+    padding: .8125rem; /* Menor padding para header compacto al hacer scroll */
+  }
+}
+
+/* ------------------- Página de Trabajos ------------------- */
+.image-grid-section {
+  padding: 1.25rem;
+}
+
+.image-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Grilla de dos columnas */
+  gap: 1.875rem; /* Espacio entre las imágenes */
+}
+/* Al usar overflow hidden se asegura que overlays y texto no se desborden */
+.image-grid-item {
+  position: relative; /* Para posicionar overlay */
+  overflow: hidden; /* Esconder desbordes */
+}
+
+.image-grid-item--tall {
+  grid-column: span 2; /* Imagen que ocupa dos columnas */
+}
+
+.image-grid__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cubrir el contenedor */
+}
+
+.image-grid__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 0, 0); /* Amarillo transparente */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Alinear texto a la izquierda */
+  transition: background-color 0.3s ease;
+}
+
+.image-grid-item:hover .image-grid__overlay {
+  background-color: var(--highlight-color); /* Mostrar color en hover */
+}
+
+.image-grid__text {
+  color: var(--background-color);
+  font-family: var(--main-font-family);
+  font-size: var(--header-font-size);
+  white-space: nowrap;
+  position: relative;
+  left: 100%; /* Comienza fuera de pantalla */
+  transition: left 0.3s ease;
+}
+
+.image-grid-item:hover .image-grid__text {
+  left: 10%; /* Mover texto hacia la izquierda en hover */
+}
+
+/* Cambiar de grid a flex en móvil para apilar imágenes verticalmente */
+@media (max-width: 48rem) {
+  .image-grid-container {
+    display: flex; /* Cambia a flex */
+    flex-direction: column; /* Apila imágenes */
+    justify-content: center;
+    align-items: center;
+  }
+  .image-grid__text {
+    font-size: var(--responsive-header-font-size);
+  }
+}
+
+/* ------------------- Página About ------------------- */
+.about-hero {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;  /* Ocupa altura completa */
+  display: flex;  /* Centrar contenido */
+  align-items: center;
+  justify-content: center;
+  padding: 9.375rem;
+  text-align: left;
+}
+
+.about-hero__container {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.about-hero__large-text {
+  font-size: 4.5vw;
+  line-height: 1.2;
+  font-weight: bold;
+  font-family: var(--main-font-family);
+}
+
+.about-hero__span {
+  color: var(--highlight-color); /* Resaltar palabras */
+}
+
+/* Responsivo para Hero About */
+@media (max-width: 48rem) {
+  .about-hero__large-text {
+    font-size: 6vw; /* Texto más grande para mantener legibilidad */
+  }
+  .about-hero {
+    padding: 5rem; /* Menos padding en móvil */
+  }
+}
+
+@media (max-width: 30rem) {
+  .about-hero__large-text {
+    font-size: 6vw;
+  }
+  .about-hero {
+    padding: 3.375rem;
+  }
+}
+
+/* ------------------- Sección Proceso de Diseño ------------------- */
+.process__title {
+  font-size: var(--header-font-size);
+  font-family: var(--secondary-font-family);
+  margin: 1.875rem 3.125rem;
+  text-align: center;
+  color: var(--background-color);
+}
+
+.design-process {
+  background-color: var(--text-color);
+  border-radius: 1rem;
+  box-shadow: .625rem .625rem .9375rem -0.1875rem rgba(2,25,41,0.29);
+  max-width: 46.875rem;
+  height: 70vh;
+  margin: 5rem auto;
+  overflow: hidden; /* Oculta contenido que se desborde */
+}
+
+.design-process__container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tabs del proceso de diseño */
+.design-process__tabs {
+  display: flex; /* Tabs en fila */
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.design-process__tab {
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  flex: 1; /* Todos los tabs ocupan ancho igual */
+  text-align: center;
+  font-family: var(--main-font-family);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.design-process__tab:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+  border-bottom: .1875rem solid var(--highlight-color);
+}
+
+.design-process__tab--active {
+  background-color: var(--text-color);
+  color: var(--background-color);
+  border-bottom: .1875rem solid var(--highlight-color);
+}
+
+/* Contenido de cada tab */
+.design-process__content {
+  padding: 2rem;
+}
+
+/* Animaciones en los pasos */
+.design-process__step {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.design-process__title {
+  font-size: 1.8rem;
+  font-family: var(--secondary-font-family);
+  margin: 0 0 1rem 0;
+  color: var(--background-color);
+}
+
+.design-process__description {
+  font-size: 1rem;
+  font-family: var(--main-font-family);
+  line-height: 1.7;
+  color: var(--background-color);
+}
+
+.design-process__description ul {
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.design-process__description li {
+  margin: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(.625rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ------------------------------ */
+/* Bloque: Estilos Responsivos    */
+/* ------------------------------ */
+@media (max-width: 48rem) {
+  .design-process__tabs {
+    flex-direction: column;
+  }
+
+  .design-process__tab {
+    border-bottom: .0625rem solid var(--text-color); /*agregar un borde inferior*/
+    border-right: none; /*eliminar el borde derecho*/
+    text-align: left;
+  }
+
+  .design-process__tab:hover {
+    border-right: .125rem solid var(--highlight-color); /*agregar un borde derecho a hacer hover*/
+    border-bottom: none; /*eliminar el borde inferior a hacer hover*/
+  }
+
+  .design-process__tab--active {
+    border-right: .1875rem solid var(--highlight-color);
+    border-bottom: none;
+  }
+
+  .design-process__content {
+    padding: 1.5rem;
+  }
+}
+
+/* ---------------------------------------- */
+/* Bloque: Acordeón de Servicios Web Design */
+/* ---------------------------------------- */
+.services-accordion {
+  padding: .0625rem 0 5rem 0;
+  background-color: var(--background-color); /* Variable de color de fondo */
+}
+
+.services__title {
+  font-size: var(--header-font-size); /* Variable de tamaño de fuente */
+  font-family: var(--secondary-font-family); /* Variable de fuente secundaria */
+  margin: 0 0 3.125rem 0;
+  text-align: center;
+  color: var(--text-color); /* Variable de color de texto */
+}
+
+.services-accordion__container {
+  border: .0625rem solid var(--highlight-color); /* Variable de color de destaque */
+  border-radius: .3125rem;
+  width: 100%;
+  max-width: 46.875rem;
+  margin: 0 auto;
+  background-color: var(--text-color); /* Variable de color de texto */
+}
+
+.services-accordion__item {
+  border-bottom: .0625rem solid var(--background-color);
+}
+
+.services-accordion__item:last-child {
+  border-bottom: none;
+}
+
+.services-accordion__title {
+  padding: .9375rem;
+  background-color: var(--text-color);
+  color: var(--background-color);
+  font-family: var(--main-font-family); /* Variable de fuente principal */
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: background-color 0.2s ease;
+  border-radius: 0;
+  font-size: var(--text-font-size);
+}
+
+.services-accordion__title:hover {
+  background-color: var(--highlight-color);
+}
+
+.services-accordion__title--active {
+  background-color: var(--highlight-color);
+  border-bottom: .1875rem solid var(--background-color);
+}
+
+.services-accordion__content {
+  max-height: 0; /* Oculto por defecto */
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  background-color: var(--text-color);
+  font-family: var(--main-font-family);
+}
+
+.services-accordion__content--active {
+  max-height: 62.5rem; /* Despliega contenido */
+  padding: .3125rem 1.5625rem;
+  transition: max-height 0.3s ease-in, padding 0.3s ease-in;
+}
+
+.services-accordion__content p {
+  margin: 1em 0.5em;
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.services-accordion__list {
+  list-style-position: inside; /* Alinea viñetas dentro del bloque para que el texto se vea ordenado y no sobresalga */
+}
+
+.services-accordion__list-item {
+  margin: 0.5em 0;
+  font-size: 0.9em;
+}
+
+/* Estilos responsivos para acordeón */
+@media (max-width: 48rem) {
+  .services-accordion__container {
+    max-width: 95%;
+  }
+
+  .services-accordion__title {
+    font-size: 1.1em;
+    padding: .75rem .9375rem;
+  }
+
+  .services-accordion__content p,
+  .services-accordion__list-item {
+    font-size: var(--text-font-size);
+  }
+}
+
+@media (max-width: 30rem) {
+  .services-accordion__title {
+    font-size: var(--text-font-size);
+    padding: .625rem .9375rem;
+  }
+}
+
+/* ------------------------------- */
+/* Bloque: Sección Carrusel        */
+/* ------------------------------- */
+.projects {
+  padding: 2rem 2rem;
+  background-color: var(--background-color);
+}
+
+.projects__title {
+  font-size: var(--header-font-size);
+  margin: 1rem;
+  text-align: center;
+  color: var(--highlight-color);
+}
+
+.projects__description {
+  text-align: center;
+  margin: 2rem;
+  font-size: var(--description-text-font-size);
+  color: var(--text-color);
+  font-family: var(--main-font-family);
+}
+
+.projects__carousel {
+  display: grid;
+  grid-template-columns: repeat(10, 80vw); /* Carrusel de 10 slides */
+  grid-auto-rows: 1fr;  /* Asegura que todas las filas tengan la misma altura */
+  grid-column-gap: 1rem;
+  overflow-x: scroll;   /* Permite desplazamiento horizontal del carrusel con scroll. */
+  scroll-snap-type: x mandatory;   /* Activa scroll snapping obligatorio en el eje X para que los slides se alineen automáticamente. */
+  scroll-padding: 1rem;   /* Asegura que el snap tenga un relleno para evitar que los slides queden pegados al borde. */
+  height: 60vh;
+}
+
+.projects__item {
+  scroll-snap-align: center;   /* Cada ítem del carrusel se alinea al centro cuando hace snap */
+  border-radius: .3125rem;
+  font-size: 0;   /* Anula cualquier espacio entre elementos inline que pudiera generarse. */
+  overflow: hidden;
+}
+
+.projects__image {
+  display: block;   /*ocupar todo el ancho de su contenedor de slide. */
+  /* La imagen siempre ocupará el 100% de ancho y alto del contenedor */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto hover en imagen del carrusel */
+.projects__item:hover .projects__image {
+  transform: scale(1.05);   /* Aumenta el tamaño de la imagen al pasar el cursor */
+}
+
+/* Clase activa durante interacción de arrastre */
+.projects__carousel.active {
+  scroll-snap-type: none;   /* Desactiva el snap mientras se está arrastrando el carrusel 
+  para permitir un scroll libre y fluido sin bloqueos. */
+  cursor: grabbing;  /* Cambia el cursor a "grabbing" para indicar visualmente 
+  que el usuario está arrastrando el carrusel. */
+}
+
+/* --------------------------------- */
+/* Bloque: Página de Contacto        */
+/* --------------------------------- */
+.contact-page-wrapper {
+  background-color: var(--text-color);
+  color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.contact-page {
+  max-width: 56.25rem;   /* Limita el ancho de la página de contacto */
+}
+
+.contact-page__heading {
+  font-size: 6rem;
+  font-family: var(--main-font-family);
+  font-weight: 700;
+  margin: 0 0 1.25rem 0;
+  color: var(--background-color);
+}
+
+.contact-page__buttons-container {
+  display: flex;
+  flex-direction: row; /* Botones dispuestos en fila */
+  justify-content: center;
+  align-items: center;
+  gap: 3.125rem; /* Separación entre botones */
+  width: 100%;
+}
+
+/* Botón de llamada: transiciones para movimiento fluido */
+.contact-button--call {
+  transition: top 0.3s ease, left 0.3s ease;
+}
+
+.contact-button--call:hover {
+  background-color: var(--highlight-color);
+  transform: translateY(-0.125rem); /* Efecto de elevación */
+}
+
+/* Botón de mensaje con colores invertidos para destacar */
+.contact-button--message {
+  background-color: var(--highlight-color);
+  color: var(--background-color);
+}
+
+.contact-button--message:hover {
+  background-color: var(--inselected-text);
+  transform: translateY(-0.125rem);
+}
+
+/* Mensaje emergente: animación de expansión y opacidad */
+.hover-message {
+  max-height: 0; /* Oculto por defecto */
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  font-size: 1.2rem;
+  font-family: var(--main-font-family);
+  color: var(--background-color);
+  text-align: center;
+  margin: 1.875rem;
+}
+
+/* Estado activo del mensaje: se muestra con altura máxima y opacidad */
+.hover-message.show {
+  max-height: 6.25rem;
+  opacity: 1;
+}
+
+/* Responsive para página de contacto */
+@media (max-width: 48rem) {
+  .contact-page__buttons-container {
+    flex-direction: column;
+  }
+  .contact-page__heading {
+    font-size: var(--responsive-header-font-size);
+  }
+}
+
+/* -------------------------------- */
+/* Bloque: Página de Formulario     */
+/* -------------------------------- */
+.form-section {
+  padding: 12.5rem 1.25rem;
+  background-color: var(--text-color);
+  color: var(--background-color);
+  display: flex; /* flex para centrar horizontalmente */
+  justify-content: center;
+}
+
+.form-section__container {
+  max-width: 75rem; /* Limita ancho máximo para que no se extienda demasiado */
+  width: 100%;
+  display: flex;
+  gap: 2.5rem; /* Espacio entre bloques */
+  align-items: flex-start;
+  flex-wrap: wrap; /* Permite que se apilen si no cabe horizontalmente */
+}
+
+.form-section__info {
+  flex: 1; /* Bloque de información ocupa espacio flexible */
+}
+
+.form-section__title {
+  font-size: 4rem;
+  font-family: var(--main-font-family);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.form-section__form {
+  flex: 1;
+  min-width: 20rem;  /* Ancho mínimo para evitar que se encoja demasiado */
+  backdrop-filter: blur(.625rem); /* Efecto de difuminado detrás */
+  background-color: var(--text-color);
+  border: .1875rem solid var(--background-color);
+  padding: 1.875rem; /* Espacio interno para los campos */
+  border-radius: .75rem; /* Bordes redondeados */
+}
+
+.form-section__field {
+  margin: 0 0 1.25rem 0;
+  display: flex;
+  flex-direction: column; /* Etiqueta encima del input */
+}
+
+.form-section__label {
+  font-size: var(--description-text-font-size);
+  font-family: var(--main-font-family);
+  margin: 0 0 .5rem 0;
+}
+
+.form-section__input,
+.form-section__textarea {
+  width: 100%;
+  padding: .75rem .9375rem;
+  font-size: 1rem;
+  border-radius: .5rem;
+  background-color: #1b3e57;
+  border: .0625rem solid var(--highlight-color);
+  color: var(--highlight-color);
+  transition: border-color 0.3s; /* Cambio de color al enfocar */
+}
+
+/* Placeholder con color destacado para mantener consistencia */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--highlight-color);
+}
+
+.form-section__input:focus,
+.form-section__textarea:focus {
+  border-color: var(--text-color); /* Borde cambia de color al enfocar */
+  outline: none;
+}
+
+.form-section__textarea {
+  resize: vertical;
+}
+
+.form-section__submit-button {
+  width: 100%; /* Botón ocupa todo el ancho del formulario */
+  padding: .9375rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--background-color);
+  background-color: var(--highlight-color);
+  border: .125rem solid var(--background-color);
+  border-radius: .625rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.form-section__submit-button:hover {
+  background-color: var(--background-color); /* Invierte colores al pasar cursor */
+  color: var(--highlight-color);
+  transform: translateY(-0.125rem); /* Efecto de elevación */
+}
+
+.form-section__checkbox-group {
+  display: flex;
+  flex-direction: column; /* Alinea checkboxes verticalmente */
+  gap: .625rem; /* Espacio entre opciones */
+  margin: .625rem;
+}
+
+.form-section__checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: .625rem;
+  font-size: 1rem;
+}
+
+.form-section__checkbox {
+  width: 1.125rem;
+  height: 1.125rem;
+  accent-color: var(--highlight-color);
+  cursor: pointer;
+}
+
+.thank-you-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--text-color);
+  display: none; /* oculto */
+  justify-content: center; /* centrar el mensaje */
+  align-items: center;
+  text-align: center;
+  font-size: 2rem;
+  font-family: var(--main-font-family);
+  color: var(--background-color); 
+  z-index: 3; 
+}
+
+
+/* Responsive para formulario */
+@media (max-width: 60rem) {
+  .form-section__container {
+    flex-direction: column; /* Cambia de fila a columna para apilar bloques en pantallas pequeñas */
+  }
+  .form-section__title {
+    font-size: var(--responsive-header-font-size);   /* Escala tamaño del título para evitar desbordes */
+  }
+  .form-section__form {
+    width: 100%; /* Form ocupa todo el ancho para que se adapte bien */
+  }
+  .form-section {
+    padding: 12.5rem 3.125rem;
+  }
+}
+
+/* ----------------------------- */
+/* Bloque: Detalle de Proyecto   */
+/* ----------------------------- */
+.work {
+  padding: 2rem 2rem;
+  background-color: var(--text-color);
+}
+
+/* Sección de descripción */
+.work__description {
+  grid-column: 2 / 2; /* Indica la columna donde se ubica la descripción */
+  display: flex;
+  margin: 3.75rem; /* Espacio alrededor */
+  flex-direction: column; /* Organiza título y texto en columna */
+  justify-content: center;
+  color: var(--background-color);
+}
+
+.work__title {
+  font-size: 2rem;
+  font-family: var(--secondary-font-family);
+  margin: 0 0 2rem 0; /* Espacio inferior */
+}
+
+.work__text {
+  font-size: var(--description-text-font-size);
+  font-family: var(--main-font-family);
+}
+
+.image-grid__museum-video {
+  width: 90%; /* Video ocupa 90% del contenedor */
+  margin: 0 0 0 3.75rem; /* Separación a la izquierda para alineación */
+}
+
+/* Responsive para sección de trabajo */
+@media (max-width: 57.9375rem) {
+  .work__description {
+    margin: 1.25rem;
+  }
+  .work__title {
+    font-size: 2rem;
+  }
+  .work__text {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .work__description {
+    margin: 2.5rem; /* Ajusta margen para que no quede pegado a los bordes */
+  }
+  .work__title {
+    font-size: var(--description-text-font-size);
+  }
+  .work__text {
+    font-size: 0.8rem; /* Texto más compacto */
+    text-align: center; /* Centra texto para mejor legibilidad en móvil */
+  }
+  .image-grid__museum-video {
+    width: 100%; /* Video ocupa todo el ancho disponible */
+    margin: 0; /* Quita margen para alinearse bien en pantallas pequeñas */
+  }
+  .image-grid__magazine-video {
+    width: 100%; /* Igual para otro video, ocupando ancho completo */
+  }
+}

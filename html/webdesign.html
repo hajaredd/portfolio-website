@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Freelance designer specializing in branding, web design, and illustration.">
+  <title>Portfolio</title>
+<!-- Preconnect to font origins for performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Google Fonts stylesheet -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<!-- Custom styles -->
+  <link rel="stylesheet" href="../css/style.css">
+<!-- JS files -->
+  <script defer src="../js/navbarHandlers.js"></script>
+  <script defer src="../js/servicesAccordionHandlers.js"></script>
+  <script defer src="../js/projectsCarouselHandlers.js"></script>
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favicon.png" type="image/png">
+
+</head>
+
+
+<body>
+  <!-- ========================== header ============================ -->
+  <header class="header">
+    <div class="header__inner">
+
+      <!-- Logo de la página -->
+      <a href="../index.html" title="logo of the website" class="header__logo">
+        <picture>
+          <source srcset="../images/webpagdesign.webp" type="image/webp">
+            <img class="header__logo-image" src="../images/webpagdesign.webp" alt="Logo" loading="lazy">
+        </picture>
+      </a>
+
+        <!-- Hamburger Button -->
+    <button class="header__toggle" aria-label="Toggle menu" title="Hamburger menu">
+      <span class="header__toggle-bar"></span>
+      <span class="header__toggle-bar"></span>
+      <span class="header__toggle-bar"></span>
+    </button>
+
+      <!-- Menú de navegación principal -->
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a href="about.html" title="landing page" class="header__nav-link">About</a>
+          </li>
+          <li class="header__nav-item header__nav-item--dropdown">
+            <a href="services.html" class="header__nav-link" title="services i offer">Services</a>
+            <ul class="header__dropdown-menu">
+              <li><a href="webdesign.html" title="web design service">Web design</a></li>
+              <li><a href="branding.html" title="branding service">Branding</a></li>
+              <li><a href="illustration.html" title="illustration service">Illustration</a></li>
+            </ul>
+          </li>
+          <li class="header__nav-item">
+            <a href="work.html" class="header__nav-link" title="all the work ive done">Work</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Botón de contacto-->
+      <a href="contact.html" class="header__contact-button" title="Send me a message">
+        Contact Me
+      </a>
+    </div>
+  </header>
+
+  <!-- ======================= MAIN ======================== -->
+  <main>
+
+    <!-- Sección de Título Principal -->
+    <div class="about-hero">
+      <div class="about-hero__container">
+        <p class="about-hero__large-text">
+          We design engaging, user-friendly websites that are visually stunning, fully responsive, and strategically
+          built for your
+          <span class="about-hero__span">online success.</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Sección de Servicios de Diseño Web (Acordeón) -->
+    <section class="services-accordion">
+      <h2 class="services__title">The services we have</h2>
+      <div class="services-accordion__container">
+
+        <!-- Servicio 1 -->
+        <div class="services-accordion__item">
+          <button class="services-accordion__title" title="Custom Website Design & Development services">Custom Website Design & Development</button>
+          <div class="services-accordion__content">
+            <p>Bespoke website design tailored to your unique brand and needs. Full-stack development using modern
+              coding languages. Focus on performance, scalability, and maintainability.</p>
+            <ul class="services-accordion__list">
+              <li class="services-accordion__list-item">Custom Design</li>
+              <li class="services-accordion__list-item">Full-Stack Development</li>
+              <li class="services-accordion__list-item">Performance Optimization</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Servicio 2 -->
+        <div class="services-accordion__item">
+          <button class="services-accordion__title" title="UX/UI Design & Consulting services">UX/UI Design & Consulting</button>
+          <div class="services-accordion__content">
+            <p>User research and analysis. Wireframing and prototyping. User interface (UI) design focused on
+              aesthetics, usability, and accessibility. User testing and iteration.</p>
+            <ul class="services-accordion__list">
+              <li class="services-accordion__list-item">User Research</li>
+              <li class="services-accordion__list-item">Wireframing & Prototyping</li>
+              <li class="services-accordion__list-item">UI Design</li>
+              <li class="services-accordion__list-item">User Testing</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Servicio 3 -->
+        <div class="services-accordion__item">
+          <button class="services-accordion__title" title="WordPress Development & Customization services">WordPress Development & Customization</button>
+          <div class="services-accordion__content">
+            <p>Building websites using WordPress. Custom theme development. Plugin customization. Content migration and
+              ongoing maintenance.</p>
+            <ul class="services-accordion__list">
+              <li class="services-accordion__list-item">WordPress Development</li>
+              <li class="services-accordion__list-item">Custom Themes</li>
+              <li class="services-accordion__list-item">Plugin Customization</li>
+              <li class="services-accordion__list-item">Website Maintenance</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Servicio 4 -->
+        <div class="services-accordion__item">
+          <button class="services-accordion__title" title="E-commerce Website Development services">E-commerce Website Development</button>
+          <div class="services-accordion__content">
+            <p>Building online stores. Product catalog setup. Shopping cart integration. Payment gateway integration.
+            </p>
+            <ul class="services-accordion__list">
+              <li class="services-accordion__list-item">E-commerce Development</li>
+              <li class="services-accordion__list-item">Product Catalog Setup</li>
+              <li class="services-accordion__list-item">Shopping Cart Integration</li>
+              <li class="services-accordion__list-item">Payment Gateways</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Servicio 5 -->
+        <div class="services-accordion__item">
+          <button class="services-accordion__title" title="Responsive Web Design services">Responsive Web Design</button>
+          <div class="services-accordion__content">
+            <p>Websites that adapt to all screen sizes. Mobile-first design strategies.</p>
+            <ul class="services-accordion__list">
+              <li class="services-accordion__list-item">Responsive Design</li>
+              <li class="services-accordion__list-item">Mobile-First Approach</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Servicio 6 -->
+        <div class="services-accordion__item">
+          <button class="services-accordion__title" title="Website Redesign & Optimization services">Website Redesign & Optimization</button>
+          <div class="services-accordion__content">
+            <p>Modernizing websites. Performance optimization. Accessibility audits.</p>
+            <ul class="services-accordion__list">
+              <li class="services-accordion__list-item">Website Redesign</li>
+              <li class="services-accordion__list-item">Performance Optimization</li>
+              <li class="services-accordion__list-item">Accessibility</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Sección de Carrusel de Proyectos -->
+    <section class="projects">
+      <h2 class="projects__title">Projects</h2>
+      <p class="projects__description">These are some of the projects I've had the pleasure of working on.</p>
+      <div class="projects__carousel">
+
+        <!-- Proyecto 1 -->
+        <div class="projects__item">
+          <picture>
+            <source srcset="../images/deepseawebsite.webp" type="image/webp">
+            <img class="projects__image" src="../images/deepseawebsite.jpg" alt="Project 1 description">
+          </picture>
+        </div>
+
+        <!-- Proyecto 2 -->
+        <div class="projects__item">
+          <picture>
+            <source srcset="../images/skincarewebsite.webp" type="image/webp">
+            <img class="projects__image" src="../images/skincarewebsite.jpg" alt="Project 2 description">
+          </picture>
+        </div>
+
+        <!-- Proyecto 3 -->
+        <div class="projects__item">
+          <picture>
+            <source srcset="../images/web3.webp" type="image/webp">
+            <img class="projects__image" src="../images/web3.jpg" alt="Project 3 description">
+          </picture>
+        </div>
+
+        <!-- Proyecto 4 -->
+        <div class="projects__item">
+          <picture>
+            <source srcset="../images/web7.webp" type="image/webp">
+            <img class="projects__image" src="../images/web7.jpg" alt="Project 4 description">
+          </picture>
+        </div>
+
+        <!-- Proyecto 5 -->
+        <div class="projects__item">
+          <picture>
+            <source srcset="../images/web8.webp" type="image/webp">
+            <img class="projects__image" src="../images/web8.jpg" alt="Project 5 description">
+          </picture>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+ <!-- ===================== FOOTER ===================== -->
+  <!-- Bloque: Pie de página con información de contacto y redes sociales -->
+  <footer class="site-footer">
+
+    <!-- Logo del pie de página -->
+    <div class="site-footer__logo-container">
+      <picture>
+        <source srcset="../images/webpagdesign.webp" type="image/webp">
+        <img src="../images/webpagdesign.jpg" alt="Your Logo" class="site-footer__logo" loading="lazy">
+      </picture>
+    </div>
+
+    <!-- Información adicional en el footer -->
+    <div class="site-footer__info">
+
+      <!-- Información de contacto -->
+      <div class="site-footer__contact">
+        <p class="site-footer__heading">Talk to me or ask me anything.</p>
+        <ul class="site-footer__links">
+          <li><a href="contact.html" title="Get in touch with us">→ Contact Me</a></li>
+          <li><a href="/privacy-notice" title="Read our privacy notice">→ Privacy Notice</a></li>
+        </ul>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="site-footer__social">
+        <ul class="site-footer__links">
+          <li><a href="https://linkedin.com/in/profile" target="_blank" rel="noreferrer"
+              title="Visit my LinkedIn profile">→ LinkedIn</a></li>
+          <li><a href="https://twitter.com/profile" target="_blank" rel="noreferrer"
+              title="Visit my Twitter profile">→ Twitter</a></li>
+          <li><a href="https://instagram.com/profile" target="_blank" rel="noreferrer"
+              title="Visit my Instagram profile">→ Instagram</a></li>
+          <li><a href="https://youtube.com/channel" target="_blank" rel="noreferrer"
+              title="Visit my YouTube channel">→ YouTube</a></li>
+        </ul>
+      </div>
+
+      <!-- Botón para volver al inicio -->
+      <div class="site-footer__back-to-top">
+        <a href="#top" title="Scroll back to the top of the page">
+          <span aria-hidden="true">↑</span>
+          Back to top
+        </a>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+</body>
+
+</html>

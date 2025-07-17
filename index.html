@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Freelance designer specializing in branding, web design, and illustration.">
+  <title>Portfolio</title>
+<!-- Preconnect to font origins for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <!-- Google Fonts stylesheet -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<!-- Custom styles -->
+  <link rel="stylesheet" href="css/style.css">
+<!-- JavaScript files -->
+  <script defer src="js/navbarHandlers.js"></script>
+  <script defer src="js/herocircle.js"></script>
+ <!-- Favicon -->
+  <link rel="icon" href="images/favicon.png" type="image/png">
+</head>
+
+
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <!-- Bloque: Cabecera principal con logo y menú de navegación -->
+  <header class="header">
+    <div class="header__inner">
+
+      <!-- Logo de la página -->
+      <a href="index.html" title="logo of the website" class="header__logo">
+        <picture>
+          <source srcset="images/webpagdesign.webp" type="image/webp">
+          <img class="header__logo-image" src="images/webdesign.png" alt="Logo" loading="lazy">
+        </picture>
+      </a>
+
+        <!-- Hamburger Button -->
+    <button class="header__toggle" aria-label="Toggle menu" title="Hamburger menu">
+      <span class="header__toggle-bar"></span>
+      <span class="header__toggle-bar"></span>
+      <span class="header__toggle-bar"></span>
+    </button>
+
+      <!-- Menú de navegación principal -->
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a href="html/about.html" title="landing page" class="header__nav-link">About</a>
+          </li>
+          <li class="header__nav-item header__nav-item--dropdown">
+            <a href="html/services.html" class="header__nav-link" title="services i offer">Services</a>
+            <ul class="header__dropdown-menu">
+              <li><a href="html/webdesign.html" title="web design service">Web design</a></li>
+              <li><a href="html/branding.html" title="branding service">Branding</a></li>
+              <li><a href="html/illustration.html" title="illustration service">Illustration</a></li>
+            </ul>
+          </li>
+          <li class="header__nav-item">
+            <a href="html/work.html" class="header__nav-link" title="all the work ive done">Work</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Botón de contacto-->
+      <a href="html/contact.html" class="header__contact-button" title="Send me a message">
+        Contact Me
+      </a>
+
+    </div>
+  </header>
+
+  <!-- ===================== MAIN ===================== -->
+  <main>
+    <!-- ======== Sección Hero ======== -->
+    <!-- Bloque: Mensaje de bienvenida y llamada a la acción -->
+    <section class="hero">
+      <div class="hero__container">
+        <div class="hero__circle" id="centralCircle"></div>
+        <div class="hero__content">
+          <h2 class="hero__title">Helloo! I'm Hajar</h2>
+          <h3 class="cursor hero__description">Let's create something great, together!</h3>
+        </div>
+      </div>
+    </section>
+    <!-- ======== Sección Servicios ======== -->
+    <!-- Bloque: Lista de servicios ofrecidos -->
+    <section class="services">
+
+      <!-- Texto animado en scroll -->
+      <div class="scrolling-text-container">
+        <div class="scrolling-text">
+          <span>Vision coming to life</span>
+          <span>Vision coming to life</span>
+          <span>Vision coming to life</span>
+          <span>Vision coming to life</span>
+          <span>Vision coming to life</span>
+
+        </div>
+      </div>
+
+      <!-- Contenedor de los servicios -->
+      <div class="services__container">
+        <h2 class="services__title">What I offer</h2>
+        <div class="services__grid">
+
+          <!-- Servicio: Web Design -->
+          <a href="#web-design" class="services__link" title="webdesign service">
+            <div class="services__item">
+              <picture>
+                <source srcset="images/webdesign.webp" type="image/webp">
+                <img src="images/webdesign.png" alt="Web Design" class="services__image" loading="lazy">
+              </picture>
+              <h3 class="services__item-title">Web Design</h3>
+              <p class="services__description">Creating visually appealing and user-friendly websites.</p>
+            </div>
+          </a>
+
+          <!-- Servicio: Branding -->
+          <a href="#branding" class="services__link" title="branding service">
+            <div class="services__item">
+              <picture>
+                <source srcset="images/branding.webp" type="image/webp">
+                <img src="images/branding.png" alt="Branding" class="services__image" loading="lazy">
+              </picture>
+              <h3 class="services__item-title">Branding</h3>
+              <p class="services__description">Developing a strong and consistent brand identity, that will make an
+                impact</p>
+            </div>
+          </a>
+
+          <!-- Servicio: Illustration -->
+          <a href="#illustration" class="services__link" title="illustration service">
+            <div class="services__item">
+              <picture>
+                <source srcset="images/illustration.webp" type="image/webp">
+                <img src="images/illustration.png" alt="Illustration" class="services__image" loading="lazy">
+              </picture>
+              <h3 class="services__item-title">Illustration</h3>
+              <p class="services__description">Creating custom illustrations for various purposes.</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== Sección Proyectos ======== -->
+    <!-- Bloque: Ejemplos de trabajos realizados -->
+    <section class="work-examples">
+      <h2 class="work-examples__heading">Selected Projects</h2>
+      <div class="work-examples__container">
+
+        <!-- Proyecto: Rebranding de Museo -->
+        <div class="work-examples__item work-examples__item--museum">
+          <picture>
+            <source srcset="images/project2/thumbnail-02.webp" type="image/webp">
+            <img src="images/project2/thumbnail-02.jpg" alt="Museum Rebranding" class="work-examples__image"
+              loading="lazy">
+          </picture>
+          <a href="html/project2.html" class="work-examples__button"
+            title="See more about the Museum Rebranding project">
+            <span>Rebranding Museum</span>
+            <span>Museum Mohammed 6, Morocco</span>
+            <span>2024/2025</span>
+          </a>
+        </div>
+
+        <!-- Proyecto: Branding de Escuela -->
+        <div class="work-examples__item work-examples__item--school">
+          <picture>
+            <source srcset="images/project1/thumb3.webp" type="image/webp">
+            <img src="images/project1/thumb3.jpg" alt="School Branding" class="work-examples__image" loading="lazy">
+          </picture>
+          <a href="html/project1.html" class="work-examples__button" title="See more about the School Branding project">
+            <span>Branding School</span>
+            <span>Skillaura, soft skills school</span>
+            <span>2025/2026</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======== Sección Sobre Mí ======== -->
+    <!-- Bloque: Información personal del diseñador -->
+    <section class="about">
+      <div class="about__container">
+        <h2 class="about__title">About Me</h2>
+        <p class="about__description">
+          Hello! I'm a passionate and versatile designer dedicated to bringing creative visions to life. I offer a
+          comprehensive suite of design services, specializing in crafting engaging and user-friendly websites,
+          developing strong and memorable brand identities, and creating unique and expressive illustrations. Working
+          with me means collaborating with a detail-oriented professional who is committed to understanding your goals
+          and delivering high-quality, impactful design solutions that help you stand out and achieve success. Let's
+          discuss your project and explore how we can create something amazing together
+        </p>
+        <a href="html/contact.html" title="Schedule a meeting with me" class="about__call-to-action">Book a Call</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <!-- Bloque: Pie de página con información de contacto y redes sociales -->
+  <footer class="site-footer">
+
+    <!-- Logo del pie de página -->
+    <div class="site-footer__logo-container">
+      <picture>
+        <source srcset="images/webpagdesign.webp" type="image/webp">
+        <img src="images/webpagdesign.jpg" alt="Your Logo" class="site-footer__logo" loading="lazy">
+      </picture>
+    </div>
+
+    <!-- Información adicional en el footer -->
+    <div class="site-footer__info">
+
+      <!-- Información de contacto -->
+      <div class="site-footer__contact">
+        <p class="site-footer__heading">Talk to me or ask me anything.</p>
+        <ul class="site-footer__links">
+          <li><a href="html/contact.html" title="Get in touch with us">→ Contact Me</a></li>
+          <li><a href="/privacy-notice" title="Read our privacy notice">→ Privacy Notice</a></li>
+        </ul>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="site-footer__social">
+        <ul class="site-footer__links">
+          <li><a href="https://linkedin.com/in/profile" target="_blank" rel="noreferrer"
+              title="Visit my LinkedIn profile">→ LinkedIn</a></li>
+          <li><a href="https://twitter.com/profile" target="_blank" rel="noreferrer"
+              title="Visit my Twitter profile">→ Twitter</a></li>
+          <li><a href="https://instagram.com/profile" target="_blank" rel="noreferrer"
+              title="Visit my Instagram profile">→ Instagram</a></li>
+          <li><a href="https://youtube.com/channel" target="_blank" rel="noreferrer"
+              title="Visit my YouTube channel">→ YouTube</a></li>
+        </ul>
+      </div>
+
+      <!-- Botón para volver al inicio -->
+      <div class="site-footer__back-to-top">
+        <a href="#top" title="Scroll back to the top of the page">
+          <span aria-hidden="true">↑</span>
+          Back to top
+        </a>
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
