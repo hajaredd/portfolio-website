@@ -76,7 +76,6 @@
 /* Imagen del logo */
 .header__logo-image {
   width: 9.375rem;
-  height: 6.875rem;
 }
 
 /* Lista de navegación */
@@ -269,9 +268,10 @@ body {
 
 /* Descripción del hero */
 .hero__description {
-  font-size: 1.5em;
   font-weight: 500;
   padding: .625rem 1.875rem;
+  font-size: 1.5em;
+  font-weight: 100;
 }
 
 /* -------------------- CURSOR EFECTO MÁQUINA DE ESCRIBIR -------------------- */
@@ -279,12 +279,8 @@ body {
 /* Contenedor del cursor */
 .cursor {
   position: relative;
-  width: 24em;
   margin: 0 auto;
   border-right: .125rem solid rgba(255,255,255,.75);
-  font-size: 1.5em;
-  font-weight: 100;
-  padding: .625rem 1.875rem;
   white-space: nowrap; /* No saltar línea */
   overflow: hidden; /* Esconde el texto fuera del contenedor */
   transform: translateY(-50%);
@@ -425,17 +421,19 @@ body {
 /* Contenedor de los ejemplos */
 .work-examples__container {
   max-width: 87.5rem;
+  width: 100%;
   margin: 0 auto; /* Centrar contenedor */
   display: flex;
   justify-content: space-around; /* Distribuir espacio alrededor */
   align-items: stretch;
   flex-wrap: wrap; /* Permite que los ítems se ajusten en varias filas */
+  padding: 1rem; /* adds breathing space on small screens */
+  box-sizing: border-box; /* Ensures padding doesn't overflow */
 }
 
 /* Ítem de ejemplo */
 .work-examples__item {
   text-align: center;
- /* Tamaño flexible con base mínima */
   border-radius: .9375rem;
   padding: 2.5rem;
   display: flex;
@@ -561,7 +559,7 @@ body {
 
 .site-footer__logo {
   width: 25rem; /* Tamaño del logo */
-  height: 18.75rem;
+
 }
 
 .site-footer__info {
@@ -605,20 +603,28 @@ body {
 }
 
 /* ------------------- Estilos Responsivos ------------------- */
-@media (max-width: 48rem) {
+@media (max-width: 768px) {
   /* Ajustes para la sección Hero */
     /* Reducir margen para títulos grandes en pantallas pequeñas */
   .hero__title {
     margin: 1.25rem;
+    font-size: 4em;
   }
+  .hero__description{
+    font-size: 1em;
+  }
+
+
 
   /* Ajuste del tamaño del título en ejemplos de trabajo */
   /* Reducir márgenes en About para mejor legibilidad en móvil */
   .work-examples__heading {
     font-size: var(--responsive-header-font-size);
   }
-  .work-examples__container {
-    max-width: 40rem;
+
+  .work-examples__image {
+    width: 100%;
+    max-width: 100%;
   }
   .work-examples {
     padding: 1rem 0;
