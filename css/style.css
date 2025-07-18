@@ -27,8 +27,11 @@
       --description-text-font-size:1.5rem;
   }
 
-    html {
+    html, body {
         scroll-behavior: smooth;
+      /* === Prevent Horizontal Scroll === */
+        max-width: 100%;
+        overflow-x: hidden;
     }
 
 /* -------------------- HEADER -------------------- */
@@ -341,14 +344,6 @@ body {
   margin: 0 auto; /* Centrar horizontalmente */
 }
 
-.services__title {
-  font-size: var(--header-font-size);
-  margin: 12.5rem 0rem 6.25rem 0rem;
-  text-align: center;
-  font-family: var(--secondary-font-family);
-  color: var(--background-color);
-}
-
 /* Grilla de servicios */
 .services__grid {
   display: grid;
@@ -606,6 +601,10 @@ body {
 @media (max-width: 768px) {
   /* Ajustes para la sección Hero */
     /* Reducir margen para títulos grandes en pantallas pequeñas */
+    .hero__circle {
+      width: 12rem;
+      height: 12rem;
+    }
   .hero__title {
     margin: 1.25rem;
     font-size: 4em;
@@ -614,7 +613,9 @@ body {
     font-size: 1em;
   }
 
-
+  .scrolling-text{
+    font-size: var(--responsive-header-font-size);
+  }
 
   /* Ajuste del tamaño del título en ejemplos de trabajo */
   /* Reducir márgenes en About para mejor legibilidad en móvil */
@@ -634,15 +635,27 @@ body {
   }
 
   /* Ajustes para la descripción en About */
-  .about__description {
-    font-size: var(--text-font-size);
-    margin: 0 1.875rem 1.875rem; /* Reducir márgin*/
+  .about__container {
+    max-width: 100%;
+    padding: 0 1rem;
+    align-items: center;
   }
 
-/* Ajuste del botón en About para evitar que ocupe todo el ancho */
-  .about__call-to-action {
-    margin: 0 1.5625rem;
+  .about__title {
+    font-size: var(--responsive-header-font-size);
+    text-align: center;
   }
+
+  .about__description {
+    font-size: 1em;
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+  .about__call-to-action {
+    margin: 0 auto;
+  }
+
 
 /* Footer pasa de horizontal a vertical para mejorar disposición en pantallas estrechas */
   .site-footer {
@@ -659,6 +672,11 @@ body {
 
   .site-footer__social {
     margin: .3125rem; /* Separación mínima */
+  }
+  .site-footer__logo {
+    width: 15rem;
+    height: auto;
+    margin-bottom: 1rem;
   }
 
   /* Navegación móvil */
@@ -754,6 +772,7 @@ body {
 }
 
 .image-grid__image {
+  
   width: 100%;
   height: 100%;
   object-fit: cover; /* Cubrir el contenedor */
@@ -841,14 +860,6 @@ body {
   }
 }
 
-@media (max-width: 30rem) {
-  .about-hero__large-text {
-    font-size: 6vw;
-  }
-  .about-hero {
-    padding: 3.375rem;
-  }
-}
 
 /* ------------------- Sección Proceso de Diseño ------------------- */
 .process__title {
@@ -952,6 +963,7 @@ body {
 /* Bloque: Estilos Responsivos    */
 /* ------------------------------ */
 @media (max-width: 48rem) {
+
   .design-process__tabs {
     flex-direction: column;
   }
@@ -1065,6 +1077,9 @@ body {
 
 /* Estilos responsivos para acordeón */
 @media (max-width: 48rem) {
+  .process__title {
+    font-size: var(--responsive-header-font-size);
+  }
   .services-accordion__container {
     max-width: 95%;
   }
@@ -1074,16 +1089,14 @@ body {
     padding: .75rem .9375rem;
   }
 
+ .services__title{
+  font-size: var(--responsive-header-font-size) ;
+  padding: 0.5rem;
+}
+
   .services-accordion__content p,
   .services-accordion__list-item {
     font-size: var(--text-font-size);
-  }
-}
-
-@media (max-width: 30rem) {
-  .services-accordion__title {
-    font-size: var(--text-font-size);
-    padding: .625rem .9375rem;
   }
 }
 
@@ -1150,6 +1163,13 @@ body {
   que el usuario está arrastrando el carrusel. */
 }
 
+/* Responsive para Sección Carrusel   */
+@media (max-width: 48rem) {
+
+  .projects__title{
+    font-size: var(--responsive-header-font-size);
+  }
+}
 /* --------------------------------- */
 /* Bloque: Página de Contacto        */
 /* --------------------------------- */
@@ -1231,6 +1251,9 @@ body {
     flex-direction: column;
   }
   .contact-page__heading {
+    font-size: var(--responsive-header-font-size);
+  }
+  .projects__title{
     font-size: var(--responsive-header-font-size);
   }
 }
@@ -1452,4 +1475,12 @@ body {
   .image-grid__magazine-video {
     width: 100%; /* Igual para otro video, ocupando ancho completo */
   }
+  /* === Responsive Image Fixes === */
+img, picture, .services__image, .work-examples__image, .site-footer__logo {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
+
+}
+
